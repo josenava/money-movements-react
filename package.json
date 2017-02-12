@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "aglio": "^2.3.0",
     "react-scripts": "0.8.1"
   },
   "dependencies": {
@@ -11,10 +12,15 @@
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1"
   },
+  "bin": {
+    "aglio": "node_modules/.bin/aglio"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "api:compile": "aglio -i api/blueprint/api.md --compile -o api/blueprint/blueprint.apib",
+    "api:docs": "aglio -i api/blueprint/api.md -s --theme-template triple"
   }
 }
