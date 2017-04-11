@@ -1,0 +1,30 @@
+{
+  "data": [{
+      "type": "category",
+      "id": "1",
+      "attributes": {
+          "name": "Clothing",
+          "keywords": ["Asos", "Springfield"]
+      }
+  },
+  {
+      "type": "category",
+      "id": "2",
+      "attributes": {
+          "name": "ATM",
+          "keywords": ["Ing Atm"]
+      }
+  },
+  {
+      "type": "category",
+      "id": "3",
+      "attributes": {
+          "name": "Restaurants",
+          "keywords": ["Just Eat", "Shamrock", "Paquita"]
+      }
+  }
+  ],
+  "jsonapi": {
+      "version": "1.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "errors": [
+        {
+            "status": "400",
+            "title": "Bad request",
+            "details": "The request was not valid."
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    }
+}

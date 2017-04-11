@@ -1,0 +1,13 @@
+{
+  "data": {
+      "type": "category",
+      "id": "1",
+      "attributes": {
+          "name": "Clothing",
+          "keywords": ["Asos", "Springfield"]
+      }
+  },
+  "jsonapi": {
+      "version": "1.0"
+  }
+}

@@ -6,30 +6,61 @@ your movements to them.
 
 ### List all user categories [GET]
 
++ Response 200 (application/vnd.api+json)
+
+     <!-- include(categories/response/categories.get.json) -->
+
++ Response 204
+
++ Response 400
+
+     <!-- include(errors/400.json) -->
+
+### Save category [POST]
+
++ Request (application/json)
+
+    + Body
+
+        <!-- include(categories/request/categories.post.json) -->
+
++ Response 400
+
+     <!-- include(errors/400.json) -->
+
+## Category details [/api/categories/{id}]
+
 + Parameters
 
-    + page (enum, optional) - Pagination information
+    + id (number, required) - Category id
 
-        + Members
-            + number - Page number
-            + size - Results per page
-
-            + Default: 1, 50
+### Get category details [GET]
 
 + Response 200 (application/vnd.api+json)
-{
-  "data": [{
-      "type": "category",
-      "id": "1",
-      "attributes": {
-          "name": "Clothing",
-          "keywords": "Asos;Springfield"
-      },
-      "links": {
-          "self": "/api/categories/1"
-      }
-  }],
-  "jsonapi": {
-      "version": "1.0"
-  }
-}
+
+    <!-- include(categories/response/categories.{id}.get.json) -->
+
++ Response 400
+
+     <!-- include(errors/400.json) -->
+
+
+### Edit category [PUT]
+
++ Request (application/json)
+
+    + Body
+
+        <!-- include(categories/request/categories.post.json) -->
+
++ Response 400
+
+     <!-- include(errors/400.json) -->
+
+### Delete category [DELETE]
+
++ Response 204
+
++ Response 400
+
+     <!-- include(errors/400.json) -->
