@@ -21,6 +21,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "api:compile": "aglio -i api/blueprint/api.md --compile -o api/blueprint/blueprint.apib",
-    "api:docs": "aglio -i api/blueprint/api.md -s --theme-template triple"
+    "api:docs": "aglio -i api/blueprint/api.md -s --theme-template triple",
+    "api:mock": "npm run api:compile && drakov -f api/blueprint/blueprint.apib -p 3005 --discover"
   }
 }
