@@ -1,32 +1,35 @@
 import React from 'react';
+import h from 'react-hyperscript';
 
 class Category extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return <p className="category" title={this.props.title} >{this.props.name}</p>;
-  }
+    constructor(props) {
+        super(props);
+    }
+  
+    render() {
+        return (
+            h('p.category', {title: this.props.title}, this.props.name)
+        )
+    }
 }
 
 export const GenerateCategories = function() {
-  let categories = [];
-  for (let i = 0; i < 10; i++) {
-    categories[i] = {
-      name:`Category ${i}`,
-      related_words: getRandomWords()
-    };
-  }
+    let categories = [];
+    for (let i = 0; i < 10; i++) {
+        categories[i] = {
+            name:`Category ${i}`,
+            related_words: getRandomWords()
+        };
+    }
 
-  return categories;
+    return categories;
 }
 
 function getRandomWords() {
-  const random_words = ['amazon', 'santander', 'mercadona', 'zara'];
-  let related_words = [];
-  const number_of_words = Math.floor(Math.random()*random_words.length);
+    const randomWords = ['amazon', 'santander', 'mercadona', 'zara'];
+    const numberOfWords = Math.floor(Math.random()*randomWords.length);
 
-  return random_words.slice(0, number_of_words).join(';');
+    return randomWords.slice(0, numberOfWords).join(';');
 }
 
 export default Category;

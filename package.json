@@ -10,7 +10,8 @@
     "bootstrap": "^3.3.7",
     "react": "^15.4.1",
     "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "react-hyperscript": "^3.0.0"
   },
   "bin": {
     "aglio": "node_modules/.bin/aglio"
