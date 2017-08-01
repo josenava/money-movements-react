@@ -4,13 +4,20 @@ import h from 'react-hyperscript';
 class Category extends React.Component {
     constructor(props) {
         super(props);
+        this.handleClickDelete = this.handleClickDelete.bind(this);
+    }
+
+    handleClickDelete(event) {
+        this.props.onClickDelete(this.props.name);
     }
   
     render() {
         return (
             h('p.category', {title: this.props.title}, [
                 h('span', this.props.name),
-                h('i.glyphicon.glyphicon-remove')
+                h('i.glyphicon.glyphicon-remove',
+                    {onClick: (e) => this.handleClickDelete(e) }
+                )
             ])
         )
     }

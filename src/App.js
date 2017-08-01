@@ -18,6 +18,7 @@ class App extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClickDelete = this.handleClickDelete.bind(this);
         // this.handleClick = this.handleClick.bind(this);
     }
 
@@ -25,29 +26,38 @@ class App extends Component {
     }
 
     handleSubmit(event) {
-        // const categories = this.state.categories;
-        // const newCategories = Object.assign({}, this.state.categories.)
-        debugger;
         let newCategories = Array.from(this.state.categories);
         newCategories.push(this.state.newCategory);
         this.setState({
             categories: newCategories,
             newCategory: {},
         });
-    
+
         event.preventDefault();
-    } 
+    }
 
     handleChange(value, key) {
         const newCategory = Object.assign({}, this.state.newCategory, {[key]: value});
         this.setState({newCategory: newCategory});
     }
 
+    handleClickDelete(categoryName) {
+        const currentCategories = Array.from(this.state.categories);
+        const remainingCategories = currentCategories.filter(
+            (category) => categoryName !== category.name
+        );
+
+        this.setState({categories: remainingCategories});
+    }
+
     render() {
         return (
             h('section#available-categories', [
                 h('h4', 'Available categories:'),
-                h(CategoryList, {categories: this.state.categories}),
+                h(CategoryList, {
+                    categories: this.state.categories,
+                    onClickDelete: this.handleClickDelete
+                }),
                 h('section#category-form', [
                     h('h4', 'Add/Edit categories:'),
                     h(CategoryForm, {
