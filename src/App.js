@@ -27,6 +27,7 @@ class App extends Component {
     handleSubmit(event) {
         // const categories = this.state.categories;
         // const newCategories = Object.assign({}, this.state.categories.)
+        debugger;
         let newCategories = Array.from(this.state.categories);
         newCategories.push(this.state.newCategory);
         this.setState({
