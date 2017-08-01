@@ -8,7 +8,10 @@ class Category extends React.Component {
   
     render() {
         return (
-            h('p.category', {title: this.props.title}, this.props.name)
+            h('p.category', {title: this.props.title}, [
+                h('span', this.props.name),
+                h('i.glyphicon.glyphicon-remove')
+            ])
         )
     }
 }
