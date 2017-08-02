@@ -6,21 +6,28 @@ class CategoryList extends React.Component {
     constructor(props) {
         super(props)
         this.handleClickDelete = this.handleClickDelete.bind(this);
+        this.handleClickEdit = this.handleClickEdit.bind(this);
     }
 
-    handleClickDelete(categoryName) {
-        this.props.onClickDelete(categoryName);
+    handleClickDelete(categoryId) {
+        this.props.onClickDelete(categoryId);
+    }
+
+    handleClickEdit(categoryId) {
+        this.props.onClickEdit(categoryId);
     }
 
     render() {
         return (
             h('ul.list-inline',
-                this.props.categories.map((category, id) => {
-                    return h('li', {key: id},
+                this.props.categories.map((category) => {
+                    return h('li', {key: category.id},
                         h(Category, {
+                            id: category.id,
                             name: category.name,
-                            title: category.related_words,
-                            onClickDelete: this.handleClickDelete
+                            title: category.relatedWords,
+                            onClickDelete: this.handleClickDelete,
+                            onClickEdit: this.handleClickEdit
                         })
                     );
                 })

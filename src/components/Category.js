@@ -1,22 +1,28 @@
 import React from 'react';
 import h from 'react-hyperscript';
+import uuid from 'uuid4';
 
 class Category extends React.Component {
     constructor(props) {
         super(props);
         this.handleClickDelete = this.handleClickDelete.bind(this);
+        this.handleClickEdit = this.handleClickEdit.bind(this);
     }
 
     handleClickDelete(event) {
-        this.props.onClickDelete(this.props.name);
+        this.props.onClickDelete(this.props.id);
     }
-  
+
+    handleClickEdit(event) {
+        this.props.onClickEdit(this.props.id);
+    }
+
     render() {
         return (
             h('p.category', {title: this.props.title}, [
-                h('span', this.props.name),
+                h('span', {onClick: (e) => this.handleClickEdit(e)}, this.props.name),
                 h('i.glyphicon.glyphicon-remove',
-                    {onClick: (e) => this.handleClickDelete(e) }
+                    {onClick: (e) => this.handleClickDelete(e)}
                 )
             ])
         )
@@ -27,8 +33,9 @@ export const GenerateCategories = function() {
     let categories = [];
     for (let i = 0; i < 10; i++) {
         categories[i] = {
+            id: uuid(),
             name:`Category ${i}`,
-            related_words: getRandomWords()
+            relatedWords: getRandomWords()
         };
     }
 
