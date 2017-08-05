@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CategoryList from './components/CategoryList';
 import CategoryForm from './components/CategoryForm';
 import Category, {GenerateCategories} from './components/Category';
 import h from 'react-hyperscript';
 import uuid from 'uuid4';
 
-class App extends Component {
+class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
