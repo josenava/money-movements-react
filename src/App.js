@@ -23,7 +23,28 @@ class App extends Component {
         this.handleClickEdit = this.handleClickEdit.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
+        this.fetchCategoriesData('http://localhost:3005/api/categories');
+    }
+
+    parseCategoriesData(categories) {
+        return categories.map((category) => {
+            return {
+                id: category.id,
+                name: category.attributes.name,
+                relatedWords: category.attributes.keywords.join(';')
+            }
+        })
+    }
+
+    fetchCategoriesData(categoriesEndPoint) {
+        fetch(categoriesEndPoint, {method: 'get'})
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                this.setState({categories: this.parseCategoriesData(data.data)});
+            })
     }
 
     handleSubmit(event) {
