@@ -57,7 +57,7 @@ class App extends Component {
     }
     handleChange(category) {
         const newCategory = Object.assign({}, this.state.newCategory, category);
-        this.setState({newCategory: newCategory});
+        this.setState({newCategory});
     }
 
     handleClickDelete(categoryId) {
@@ -80,7 +80,7 @@ class App extends Component {
         const currentCategories = Object.assign([], this.state.categories);
         const selectedCategory = currentCategories.filter((category) => categoryId === category.id)[0];
 
-        this.setState({selectedCategory: selectedCategory});
+        this.setState({selectedCategory});
     }
 
     render() {

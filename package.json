@@ -4,18 +4,20 @@
   "private": true,
   "devDependencies": {
     "aglio": "^2.3.0",
-    "react-scripts": "0.8.1"
+    "react-scripts": "0.8.1",
+    "drakov": "^1.0.4" 
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "react": "^15.4.1",
+    "react": "^15.6.1",
     "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.1",
+    "react-dom": "^15.6.1",
     "react-hyperscript": "^3.0.0",
     "uuid4": "^1.0.0"
   },
   "bin": {
-    "aglio": "node_modules/.bin/aglio"
+    "aglio": "node_modules/.bin/aglio",
+    "drakov": "node_modules/.bin/drakov"
   },
   "scripts": {
     "start": "react-scripts start",
