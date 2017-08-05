@@ -23,7 +23,28 @@ class App extends React.Component {
         this.handleClickEdit = this.handleClickEdit.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
+        this.fetchCategoriesData('http://localhost:3005/api/categories');
+    }
+
+    parseCategoriesData(categories) {
+        return categories.map((category) => {
+            return {
+                id: category.id,
+                name: category.attributes.name,
+                relatedWords: category.attributes.keywords.join(';')
+            }
+        })
+    }
+
+    fetchCategoriesData(categoriesEndPoint) {
+        fetch(categoriesEndPoint, {method: 'get'})
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                this.setState({categories: this.parseCategoriesData(data.data)});
+            })
     }
 
     handleSubmit(event) {
@@ -57,7 +78,7 @@ class App extends React.Component {
     }
     handleChange(category) {
         const newCategory = Object.assign({}, this.state.newCategory, category);
-        this.setState({newCategory: newCategory});
+        this.setState({newCategory});
     }
 
     handleClickDelete(categoryId) {
@@ -80,7 +101,7 @@ class App extends React.Component {
         const currentCategories = Object.assign([], this.state.categories);
         const selectedCategory = currentCategories.filter((category) => categoryId === category.id)[0];
 
-        this.setState({selectedCategory: selectedCategory});
+        this.setState({selectedCategory});
     }
 
     render() {
