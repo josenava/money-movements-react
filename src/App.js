@@ -2,7 +2,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as actionCreators from './actions/actionCreators';
-import Main from './Main';
+import ShowCategories from './ShowCategories';
 
 function mapStateToProps(state) {
     return {
@@ -15,7 +15,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-const App = withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+const App = withRouter(connect(mapStateToProps, mapDispatchToProps)(ShowCategories));
 
 
 export default App;

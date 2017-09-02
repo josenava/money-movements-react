@@ -15,20 +15,20 @@ const logout = () => (<div>Logout</div>);
 
 const router = (
     <Provider store={store}>
-    <Router>
-    <div>
-        <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/categories">Categories</Link></li>
-            <li><Link to="/logout">Logout</Link></li>
-        </ul>
-        <hr/>
+        <Router>
+            <div>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/categories">Categories</Link></li>
+                    <li><Link to="/logout">Logout</Link></li>
+                </ul>
+                <hr/>
 
-        <Route exact path="/" component={home}/>
-        <Route path="/categories" component={ShowCategories}/>
-        <Route path="/logout" component={logout}/>
-    </div>
-    </Router>
+                <Route exact path="/" component={home}/>
+                <Route path="/categories" component={App}/>
+                <Route path="/logout" component={logout}/>
+            </div>
+        </Router>
     </Provider>
 );
 
