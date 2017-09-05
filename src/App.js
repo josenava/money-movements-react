@@ -5,13 +5,13 @@ import * as actionCreators from './actions/actionCreators';
 import ShowCategories from './ShowCategories';
 
 function mapStateToProps(state) {
-    return {
-        categories: state.categories
-    }
+  return {
+    categories: state.categories,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators(actionCreators, dispatch);
+  return bindActionCreators(actionCreators, dispatch);
 }
 
 
