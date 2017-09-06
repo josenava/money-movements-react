@@ -1,3 +1,8 @@
+function deleteCategory(state, id) {
+  console.log(`surprise dude ${id}`);
+}
+
+
 function categories(state = [], action) {
   console.log(state, action);
 
@@ -7,6 +12,8 @@ function categories(state = [], action) {
       break;
     case 'ADD_CATEGORY':
     case 'DELETE_CATEGORY':
+      deleteCategory(state, action.id);
+      break;
     default:
   }
 

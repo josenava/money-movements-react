@@ -47,8 +47,7 @@ export function GenerateCategories() {
   }
 
   return categories;
-};
-
+}
 
 
 export default Category;

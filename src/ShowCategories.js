@@ -30,8 +30,8 @@ class ShowCategories extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClickDelete = this.handleClickDelete.bind(this);
-    this.handleClickEdit = this.handleClickEdit.bind(this);
+    this.handleClickDelete = this.props.deleteCategory.bind(this);
+    this.handleClickEdit = this.props.editCategory.bind(this);
   }
 
   componentDidMount() {

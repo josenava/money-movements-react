@@ -14,8 +14,6 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch);
 }
 
-
 const App = withRouter(connect(mapStateToProps, mapDispatchToProps)(ShowCategories));
-
 
 export default App;
